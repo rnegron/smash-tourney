@@ -16,7 +16,10 @@ smashtourney.py uses [pydub](https://github.com/jiaaro/pydub/) to handle audio f
 
 `$ pip install pydub`
 
-and you're ready to run the script! 
+Next, you'll need to create a `names.txt` file in the same directory as `smashtourney.py`. In the text file, insert line-separated names for the players who will be participating in the tourney.
+
+
+You're ready to run the script! 
 
 `$ python3 smashtourney.py`
 
@@ -27,8 +30,8 @@ smashtourney.py will create a folder called `tourney`, where it will store the c
 ## To-Do
 - [x] Allow different TTS languages 
 - [ ] Allow different announcer voices (from past Smash games)
--  [ ] General clean-up
--  [ ] Better error-checking and handling
+- [ ] General clean-up
+- [ ] Better error-checking and handling
 
 
 ## License (MIT)
