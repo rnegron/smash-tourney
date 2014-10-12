@@ -1,7 +1,7 @@
 smash-versus-tourney
 ===================
 
-The Super Smash Bros. 2v2 randomizer and announcer voice implementer...!
+The Super Smash Bros. 1v1 randomizer and announcer voice implementer...!
 
 ## About
 
