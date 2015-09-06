@@ -8,8 +8,8 @@ The Super Smash Bros. 1v1 randomizer and announcer voice implementer!
 A simple python script that, given a list of player names, outputs a random pairing of them (representing two players who will fight) and creates .wav files for each pairing. The .wav file contains a text-to-speech reading of the first player's name, followed by the classic "VERSUS" line, and ends with the second player's name.
 
 smash-versus-tourney expects a `versus.wav` file in the same folder as `smash_tourney.py`. Previously, I
-had included the file in this repository, but I'm not quite sure I'm allow to do that. Instead, I'll link to
-[The Sounds Resource](http://www.sounds-resource.com/3ds/supersmashbrosfornintendo3ds/sound/3535/), where you can find the announcer sound (in this case, Xander Mobus from Smash 4). Make sure it's called `versus.wav`!
+had included the file in this repository, but I'm not quite sure I'm allowed to do that. Instead, I'll link to
+[The Sounds Resource](http://www.sounds-resource.com/3ds/supersmashbrosfornintendo3ds/sound/3535/), where you can find the announcer voice samples (in this case, Xander Mobus from Smash 4). Make sure it's called `versus.wav`!
 
 ## How to use
 
