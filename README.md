@@ -1,15 +1,14 @@
 smash-versus-tourney
 ===================
 
-The Super Smash Bros. 1v1 randomizer and announcer voice implementer!
-
+The Open Source Super Smash Bros. 1v1 randomizer and announcer voice implementer (written in Python 3)!
 ## About
 
 A simple python script that, given a list of player names, outputs a random pairing of them (representing two players who will fight) and creates .wav files for each pairing. The .wav file contains a text-to-speech reading of the first player's name, followed by the classic "VERSUS" line, and ends with the second player's name.
 
 smash-versus-tourney expects a `versus.wav` file in the same folder as `smash_tourney.py`. Previously, I
 had included the file in this repository, but I'm not quite sure I'm allowed to do that. Instead, I'll link to
-[The Sounds Resource](http://www.sounds-resource.com/3ds/supersmashbrosfornintendo3ds/sound/3535/), where you can find the announcer voice samples (in this case, Xander Mobus from Smash 4). Make sure it's called `versus.wav`!
+[The Sounds Resource](http://www.sounds-resource.com/3ds/supersmashbrosfornintendo3ds/sound/3535/), where you can find the announcer voice samples (in this case, Xander Mobus from Smash 4). Make sure the sound file is called `versus.wav`!
 
 ## How to use
 
@@ -30,10 +29,24 @@ You're ready to run the script!
 
 smash_tourney.py will create a folder called `tourney`, where it will store the created .wav files for convenience.
 
+## Common issues and bugs
+
+[_HTTP Error 403_](https://en.wikipedia.org/wiki/HTTP_403)
+
+Since this script uses Google Translate to perform the text-to-speech, an error
+occurs frequently which apparently has to do with the servers rejecting a request
+due to a high volume of tries or 'suspucious activity'. Basically, the server thinks the script is a malicious bot and rejects the input. I've read that not performing and queries for at least 24 hours should fix it, but I'm not completely sure that's the underlying issue.
+
+
+
 ## To-Do
-- [ ] More intuitive TTS language selection
+- [x] More intuitive TTS language selection
+- [x] Better error-checking and handling
 - [ ] General clean-up
-- [ ] Better error-checking and handling
+
+Of course, I could always improve both the language selection and the error handling, but at least
+they are much better now.
+
 
 
 ## License (MIT)
