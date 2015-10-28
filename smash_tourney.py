@@ -34,14 +34,15 @@ def create_sound(name, lang):
     error = False
 
     # template url for Google TTS
-    tts = 'http://translate.google.com/translate_tts?tl={}&q={}'
+    tts = 'http://translate.google.com/translate_tts?tl={}&q={}&client=t'
     opener = build_opener()
 
     # request the sound file for the player name
     request = Request( tts.format(lang, name.replace(' ', '%20')) )
 
-    # this line tricks Google Translate into accepting the query
+    # these two lines trick Google Translate into accepting the query
     request.add_header('User-agent', 'Mozilla/6.0')
+    request.add_header('Referer', 'http://translate.google.com/')
 
     # prepare the file for writing sound into
     sound = open('{}.wav'.format(name), 'wb')
@@ -54,11 +55,12 @@ def create_sound(name, lang):
         # if an error ocured, notify and prepare error variable
         print('--- Could not create sound! \'{}\' ---\n'.format(err))
         error = True
+        # also remove the empty wav file
+        remove('./{}.wav'.format(name))
 
     finally:
         # no matter what, close the file and remove the original .wav
         sound.close()
-        remove('./{}.wav'.format(name))
 
         # also return the error to the calling function
         return error
@@ -73,13 +75,13 @@ def main():
     else:
         # Empty the tourney dir
         rem = glob('./tourney/*.wav')
-        for file in rem:
-            remove(file)
+        for wav_file in rem:
+            remove(wav_file)
 
-    with open('names.txt', 'r') as file:
+    with open('names.txt', 'r') as text_file:
 
         # populate the list with formatted names
-        names = [name.replace('\n', '') for name in file if name != '\n']
+        names = [name.replace('\n', '') for name in text_file if name != '\n']
 
         # Google TTS supports many languages
         languages = {'english':'en', 'spanish': 'es', 'french': 'fr',
@@ -132,7 +134,7 @@ def main():
 
             # if any of the two files could not be created, do not try to link them
             if not sound_error1 and not sound_error2:
-                
+
                 # link the two names and the 'versus' sound
                 link_sound(name1, name2)
 
@@ -144,6 +146,12 @@ def main():
             print('And {} as the extra player!'.format(extra))
 
         print('\n')
+
+        # remove the individual wav files, if they exist
+        rem = glob('./*.wav')
+        for wav_file in rem:
+            remove(wav_file)
+
         return
 
 if (__name__) == '__main__':
