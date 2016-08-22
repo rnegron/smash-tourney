@@ -12,9 +12,9 @@ from glob import glob
 def link_sound(file1, file2):
 
     # initialize the .wav files
-    name1 = AudioSegment.from_file('./{}.wav'.format(file1.replace(' ', '')))
+    name1 = AudioSegment.from_file('./{}.mp3'.format(file1.replace(' ', '')))
     versus = AudioSegment.from_file('./versus.wav')
-    name2 = AudioSegment.from_file('./{}.wav'.format(file2.replace(' ', '')))
+    name2 = AudioSegment.from_file('./{}.mp3'.format(file2.replace(' ', '')))
 
     # Lower the 'versus' volume by 5 dB
     versus -= 5
@@ -27,7 +27,7 @@ def create_sound(name):
 
     # gTTS greatly simplifies accessing Google's text-to-speech API
     tts = gTTS(text=name)
-    tts.save('{}.wav'.format(name.replace(' ', '')))
+    tts.save('{}.mp3'.format(name.replace(' ', '')))
 
 
 def main():
@@ -39,9 +39,9 @@ def main():
 
     else:
         # Empty the tourney dir
-        rem = glob('./tourney/*.wav')
-        for wav_file in rem:
-            remove(wav_file)
+        rem = glob('./tourney/*.mp3')
+        for mp3_file in rem:
+            remove(mp3_file)
 
     with open('names.txt', 'r') as text_file:
 
@@ -88,8 +88,8 @@ def main():
 
         print('')
 
-        # remove the individual wav files, if they exist
-        rem = glob('./*.wav')
+        # remove the individual name mp3 files, if they exist
+        rem = glob('./*.mp3')
         for wav_file in rem:
             remove(wav_file)
 
