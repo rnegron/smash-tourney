@@ -14,9 +14,17 @@ had included the file in this repository, but I'm not quite sure I'm allowed to 
 
 _**Intended for use with a Python 3 interpreter**_.
 
-smashtourney.py uses [pydub](https://github.com/jiaaro/pydub/) to handle audio files. `pydub` can be easily installed using `pip`:
+smashtourney.py uses [pydub](https://github.com/jiaaro/pydub/) to handle audio files and [gTTS](https://github.com/pndurette/gTTS) to interface with Google's text-to-speech API.
+
+Both can be easily installed using `pip`:
 
 `$ pip install pydub`
+
+`$ pip install gTTS`
+
+Alternatively, you may use the provided `requirements.txt` file to install the dependencies.
+
+`$ pip install -r requirements.txt`
 
 Next, you'll need to create a `names.txt` file in the same directory as `smash_tourney.py`. In the text file, insert line-separated names for the players who will be participating in the tourney.
 
@@ -29,29 +37,18 @@ You're ready to run the script!
 
 smash_tourney.py will create a folder called `tourney`, where it will store the created .wav files for convenience.
 
-## Common issues and bugs
-
-[_HTTP Error 403_](https://en.wikipedia.org/wiki/HTTP_403)
-
-Since this script uses Google Translate to perform the text-to-speech, an error
-occurs frequently which apparently has to do with the servers rejecting a request
-due to a high volume of tries or 'suspucious activity'. Basically, the server thinks the script is a malicious bot and rejects the input. I've read that not performing and queries for at least 24 hours should fix it, but I'm not completely sure that's the underlying issue.
-
 
 
 ## To-Do
-- [x] More intuitive TTS language selection
-- [x] Better error-checking and handling
-- [ ] General clean-up
-
-Of course, I could always improve both the language selection and the error handling, but at least
-they are much better now.
-
+- [ ] Add TTS language selection (currently defaults to English)
+- [ ] Write tests
+- [ ] Improve name import method (at least provide more customization)
+- [ ] Improve file handling
 
 
 ## License (MIT)
 
-Copyright (c) 2014 Raúl Negrón
+Copyright (c) 2016 Raúl Negrón
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
