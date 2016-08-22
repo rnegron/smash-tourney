@@ -54,8 +54,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-# Text files
-*.txt
+# Name list file
+names.txt
 
 # Versus announcer sound file
 *.wav

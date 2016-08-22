@@ -1,0 +1,4 @@
+gTTS==1.1.6
+gTTS-token==1.1.1
+pydub==0.16.5
+requests==2.11.1

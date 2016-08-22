@@ -22,7 +22,7 @@ Both can be easily installed using `pip`:
 
 `$ pip install gTTS`
 
-Alternatively, you may use the provided `requirements.txt` file to install the dependencies.
+Alternatively, you may use the provided `requirements.txt` file to install the dependencies:
 
 `$ pip install -r requirements.txt`
 
@@ -35,7 +35,7 @@ You're ready to run the script!
 
 **IMPORTANT**
 
-smash_tourney.py will create a folder called `tourney`, where it will store the created .wav files for convenience.
+smash_tourney.py will create a folder called `tourney` in its working directory, where it will store the created .wav files for convenience.
 
 
 
