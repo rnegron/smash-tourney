@@ -8,7 +8,7 @@ A simple python script that, given a list of player names, outputs a random pair
 
 smash-versus-tourney expects a `versus.wav` file in the same folder as `smash_tourney.py`. Previously, I
 had included the file in this repository, but I'm not quite sure I'm allowed to do that. Instead, I'll link to
-[The Sounds Resource](http://www.sounds-resource.com/3ds/supersmashbrosfornintendo3ds/sound/3535/), where you can find the announcer voice samples (in this case, Xander Mobus from Smash 4). Make sure the sound file is called `versus.wav`!
+[The Sounds Resource](http://www.sounds-resource.com/3ds/supersmashbrosfornintendo3ds/sound/3535/), where you can find the announcer voice samples (in this case, Xander Mobus from Smash 4). Look for the 'snd_se_narration_menu_00000013.wav' file inside the 'snd_se_narration_menu' folder. Make sure the file is called `versus.wav` inside your working directory!
 
 ## How to use
 
