@@ -57,8 +57,13 @@ docs/_build/
 # Name list file
 names.txt
 
-# Versus announcer sound file
-*.wav
-
 # PyBuilder
 target/
+
+# VSCode
+.vscode/
+
+# Script Output
+tourney/
+*.wav
+*.mp3

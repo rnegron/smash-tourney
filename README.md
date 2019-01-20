@@ -1,10 +1,10 @@
-smash-versus-tourney
-===================
+# smash-versus-tourney
 
-The Open Source Super Smash Bros. 1v1 randomizer and announcer voice implementer (written in Python 3)!
+The Open Source Super Smash Bros. 1v1 randomizer with customizable "versus" voice implementer!
+
 ## About
 
-A simple python script that, given a list of player names, outputs a random pairing of them (representing two players who will fight) and creates .wav files for each pairing. The .wav file contains a text-to-speech reading of the first player's name, followed by the classic "VERSUS" line, and ends with the second player's name.
+A simple python script that, given a list of player names, outputs a random pairing of them (representing two players who will fight) and creates .wav files for each pairing. The .mp3 file contains a text-to-speech reading of the first player's name, followed by a customizable phrase (say, a classic "VERSUS" line?) and ends with the second player's name.
 
 smash-versus-tourney expects a `versus.wav` file in the same folder as `smash_tourney.py`. Previously, I
 had included the file in this repository, but I'm not quite sure I'm allowed to do that. Instead, I'll link to
@@ -14,7 +14,7 @@ had included the file in this repository, but I'm not quite sure I'm allowed to 
 
 _**Intended for use with a Python 3 interpreter**_.
 
-smashtourney.py uses [pydub](https://github.com/jiaaro/pydub/) to handle audio files and [gTTS](https://github.com/pndurette/gTTS) to interface with Google's text-to-speech API.
+smash-versus-tourney uses [pydub](https://github.com/jiaaro/pydub/) to handle audio files and [gTTS](https://github.com/pndurette/gTTS) to interface with Google's text-to-speech API.
 
 Both can be easily installed using `pip`:
 
@@ -26,25 +26,24 @@ Alternatively, you may use the provided `requirements.txt` file to install the d
 
 `$ pip install -r requirements.txt`
 
-Next, you'll need to create a `names.txt` file in the same directory as `smash_tourney.py`. In the text file, insert line-separated names for the players who will be participating in the tourney.
+Next, you'll need to create a file with line-separated names for the players who will be participating the the tourney.
 
+You're ready to run the script! Suppose the file with the player names is called `names.txt` and resides in the same directory as the script. Then simply run:
 
-You're ready to run the script!
-
-`$ python3 smash_tourney.py`
+`$ python3 smash_tourney.py names.txt`
 
 **IMPORTANT**
 
-smash_tourney.py will create a folder called `tourney` in its working directory, where it will store the created .wav files for convenience.
-
-
+smash-versus-tourney will create a folder called `tourney` in its working directory, where it will store the created .wav files for convenience.
 
 ## To-Do
+
 - [ ] Add TTS language selection (currently defaults to English)
 - [ ] Write tests
-- [ ] Improve name import method (at least provide more customization)
-- [ ] Improve file handling
-
+- [ ] Travis CI Integration
+- [x] Improve name import method (at least provide more customization)
+- [x] Improve file handling (now using temp folders)
+- [x] Python3.7, 2019 re-write
 
 ## License (MIT)
 
