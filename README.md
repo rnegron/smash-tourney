@@ -1,9 +1,9 @@
 # smash-tourney
 
-[![Build Status](https://travis-ci.org/rnegron/smash_tourney.svg?branch=master)](https://travis-ci.org/rnegron/smash_tourney)
-[![Coverage Status](https://coveralls.io/repos/github/rnegron/smash_tourney/badge.svg?branch=master)](https://coveralls.io/github/rnegron/smash_tourney?branch=master)
-[![Updates](https://pyup.io/repos/github/rnegron/smash_tourney/shield.svg)](https://pyup.io/repos/github/rnegron/smash_tourney/)
-[![Python 3](https://pyup.io/repos/github/rnegron/smash_tourney/python-3-shield.svg)](https://pyup.io/repos/github/rnegron/smash_tourney/)
+[![Build Status](https://travis-ci.org/rnegron/smash-tourney.svg?branch=master)](https://travis-ci.org/rnegron/smash-tourney)[![Coverage Status](https://coveralls.io/repos/github/rnegron/smash-tourney/badge.svg?branch=master)](https://coveralls.io/github/rnegron/smash-tourney?branch=master)
+![pypi version](https://img.shields.io/pypi/v/smash-tourney.svg)
+[![Updates](https://pyup.io/repos/github/rnegron/smash-tourney/shield.svg)](https://pyup.io/repos/github/rnegron/smash-tourney/)
+[![Python 3](https://pyup.io/repos/github/rnegron/smash-tourney/python-3-shield.svg)](https://pyup.io/repos/github/rnegron/smash-tourney/)
 
 ## About
 
