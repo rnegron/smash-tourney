@@ -5,6 +5,7 @@ python:
 
 install:
   - pip install black isort coverage coveralls
+  - pip install -e .
 
 script:
   - black --check smash_tourney
