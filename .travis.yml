@@ -1,0 +1,13 @@
+dist: xenial
+language: python
+python:
+  - "3.7"
+
+install:
+  - pip install black isort coverage coveralls
+
+script:
+  - black --check smash_tourney
+  - isort smash_tourney --recursive --check-only --diff
+  - coverage run --source smash_tourney tests.py
+  - coveralls

@@ -63,6 +63,10 @@ target/
 # VSCode
 .vscode/
 
+# Testing
+.coverage
+htmlcov/
+
 # Script Output
 tourney/
 *.wav
