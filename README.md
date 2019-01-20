@@ -1,4 +1,7 @@
 # smash-versus-tourney
+[![Build Status](https://travis-ci.org/rnegron/smash-versus-tourney.svg?branch=master)](https://travis-ci.org/rnegron/smash-versus-tourney)
+[![Updates](https://pyup.io/repos/github/rnegron/smash-versus-tourney/shield.svg)](https://pyup.io/repos/github/rnegron/smash-versus-tourney/)
+[![Python 3](https://pyup.io/repos/github/rnegron/smash-versus-tourney/python-3-shield.svg)](https://pyup.io/repos/github/rnegron/smash-versus-tourney/)
 
 The Open Source Super Smash Bros. 1v1 randomizer with customizable "versus" voice implementer!
 
@@ -12,7 +15,7 @@ had included the file in this repository, but I'm not quite sure I'm allowed to 
 
 ## How to use
 
-_**Intended for use with a Python 3 interpreter**_.
+_**Intended for use with Python >= 3.6**_.
 
 smash-versus-tourney uses [pydub](https://github.com/jiaaro/pydub/) to handle audio files and [gTTS](https://github.com/pndurette/gTTS) to interface with Google's text-to-speech API.
 
@@ -36,18 +39,9 @@ You're ready to run the script! Suppose the file with the player names is called
 
 smash-versus-tourney will create a folder called `tourney` in its working directory, where it will store the created .wav files for convenience.
 
-## To-Do
-
-- [ ] Add TTS language selection (currently defaults to English)
-- [ ] Write tests
-- [ ] Travis CI Integration
-- [x] Improve name import method (at least provide more customization)
-- [x] Improve file handling (now using temp folders)
-- [x] Python3.7, 2019 re-write
-
 ## License (MIT)
 
-Copyright (c) 2016 Raúl Negrón
+Copyright (c) 2019 Raúl Negrón
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
