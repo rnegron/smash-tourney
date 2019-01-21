@@ -20,10 +20,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def create_sound_google(temp_dir: Path, text: str, fmt="mp3") -> None:
+def create_sound_google(temp_dir: Path, text: str) -> None:
     # gTTS greatly simplifies accessing Google's text-to-speech API
     tts = gTTS(text=text)
-    temp_file = str(temp_dir / f"{text.replace(' ', '')}.{fmt}")
+    temp_file = str(temp_dir / f"{text.replace(' ', '')}.wav")
     tts.save(temp_file)
 
 
@@ -39,9 +39,9 @@ def link_sound(tourney_dir: Path, temp_dir: Path, name_1: str, name_2: str) -> N
         logger.error('No "versus.wav" file found in the directory!')
         sys.exit(1)
 
-    # initialize the .mp3 files
-    file_1 = AudioSegment.from_file(str(temp_dir / f"{name_1}.mp3"))
-    file_2 = AudioSegment.from_file(str(temp_dir / f"{name_2}.mp3"))
+    # initialize the .wav files
+    file_1 = AudioSegment.from_file(str(temp_dir / f"{name_1}.wav"))
+    file_2 = AudioSegment.from_file(str(temp_dir / f"{name_2}.wav"))
 
     # Lower the 'versus' volume by 5 dB
     versus -= 5
@@ -51,7 +51,7 @@ def link_sound(tourney_dir: Path, temp_dir: Path, name_1: str, name_2: str) -> N
 
     # Export the finalized file into the tourney directory
     result = combined.export(
-        str(tourney_dir / f"{name_1}_vs_{name_2}.mp3"), format="mp3"
+        str(tourney_dir / f"{name_1}_vs_{name_2}.wav"), format="wav"
     )
     result.close()
 
@@ -76,7 +76,7 @@ def main() -> None:
         )
 
         # Generate a versus.wav file
-        create_sound_google(Path("."), "versus", "wav")
+        create_sound_google(Path("."), "versus")
         if not versus_file.exists():
             logger.error("Could not generate a versus.wav file automatically...")
             sys.exit(1)
@@ -97,8 +97,8 @@ def main() -> None:
 
     # The tourney directory already exists
     else:
-        # Clean up possibly existing mp3 files
-        files_to_remove = tourney_dir.glob("*.mp3")
+        # Clean up possibly existing .wav files
+        files_to_remove = tourney_dir.glob("*.wav")
         for file in files_to_remove:
             file.unlink()
 
@@ -143,7 +143,7 @@ def main() -> None:
                 # add them to the dict
                 vs_dict[name_1] = name_2
 
-                # create the .mp3 files for each name
+                # create the .wav files for each name
                 create_sound_google(temp_dir, name_1)
                 create_sound_google(temp_dir, name_2)
 
