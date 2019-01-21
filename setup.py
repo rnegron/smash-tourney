@@ -4,7 +4,7 @@ from shutil import rmtree
 
 from setuptools import Command, setup
 
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 
 with open("README.md", "r") as readme:
     long_description = readme.read()

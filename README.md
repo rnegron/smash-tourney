@@ -29,4 +29,4 @@ You're ready to run the script! Suppose the file with the player names is called
 
 **IMPORTANT**
 
-smash-tourney will create a folder called `tourney` in its working directory, where it will store the created .mp3 files for convenience.
+smash-tourney will create a folder called `tourney` in its working directory, where it will store the created .wav files for convenience.
