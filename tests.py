@@ -13,7 +13,7 @@ class TestSmashTourney(unittest.TestCase):
 
             create_sound_google(temp_dir, name_1)
 
-            result_file = temp_dir / f"{name_1}.mp3"
+            result_file = temp_dir / f"{name_1}.wav"
 
             self.assertTrue(result_file.exists())
 
@@ -29,10 +29,10 @@ class TestSmashTourney(unittest.TestCase):
                 create_sound_google(temp_dir, name_2)
 
                 # Create the wav file as well
-                create_sound_google(Path.cwd(), "versus", fmt="wav")
+                create_sound_google(Path.cwd(), "versus")
 
                 link_sound(tourney_dir, temp_dir, name_1, name_2)
-                result_file = tourney_dir / f"{name_1}_vs_{name_2}.mp3"
+                result_file = tourney_dir / f"{name_1}_vs_{name_2}.wav"
                 self.assertTrue(result_file.exists())
 
 
